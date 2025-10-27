@@ -91,7 +91,7 @@ scopeo inspect docker://[external_registry:port]/[image_name]
 podman run -d --name=[container_name] -p [host_port:container_port] [registry:port]/[image_name]:[tag]
 ```
 
-# Connect to a container to wxecute commands
+# Connect to a container to execute commands
 
 ```sh
 podman exec -it [container_name] [bash or /bin/bash]
