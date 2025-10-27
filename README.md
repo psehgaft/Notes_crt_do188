@@ -8,12 +8,12 @@ podman network create network-01
 podman run -d --name new-container --net network-01 container-image:latest
 
 
-´´´Containerfile
+```Containerfile
 FROM registry.access.redhat.com/ubi9/nginx-120:1-39
 RUN echo "It is pitch black. \
 You are likely to be eaten by a grue." >> index.html
 CMD nginx -g "daemon off;"
-´´´
+```
 
 
 # Edit containers config file to add secure and insecure registry
@@ -22,13 +22,13 @@ CMD nginx -g "daemon off;"
 vi /etc/containers/registries.conf
 ```
 
-...
+```sh
 [registries.search]
 registries = ['registry.do180.lab:5000', 'registry.access.redhat.com', 'registry.redhat.io', 'docker.io', 'quay.io']
 ...
 [registries.insecure]
 registries = ['registry.do180.lab:5000']
-...
+```
 
 # Pull image
 
